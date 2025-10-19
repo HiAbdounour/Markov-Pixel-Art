@@ -2,8 +2,17 @@ import numpy as np
 import pygame
 pygame.init()
 
+def convert_to_RGB(clr):
+    c,m,y,k = clr
+    c//=100
+    m//=100
+    y//=100
+    k//=100
+    return (255*(1-c)*(1-k),255*(1-m)*(1-k),255*(1-y)*(1-k))
+
 
 def draw_pixel(window,pos,clr):
+    clr = convert_to_RGB(clr)
     pygame.draw.rect(window,pygame.Color(clr),(pos[0],pos[1],50,50),0)
     pygame.display.flip()
 
