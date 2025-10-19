@@ -14,13 +14,13 @@ def init_clr():
             c,m,y,k = int(c),int(m),int(y),int(k)
             if not(0<=c<=100 and 0<=m<=100 and 0<=y<=100 and 0<=k<=100):
                 raise ValueError
+            return (c,m,y,k)
         except ValueError:
             print("Please enter an integer between 0 and 100")
             init_clr()
         except Exception:
             print("Something goes wrong... Please retry\n")
             init_clr()
-    return (c,m,y,k)
 
 def convert_to_RGB(clr):
     c,m,y,k = clr
@@ -32,7 +32,9 @@ def convert_to_RGB(clr):
 
 
 def draw_pixel(window,pos,clr):
+    print(clr)
     clr = convert_to_RGB(clr)
+    print(clr)
     pygame.draw.rect(window,pygame.Color(clr),(pos[0],pos[1],50,50),0)
     pygame.display.flip()
 
@@ -54,6 +56,7 @@ def break_stationary():
 #        Y   * * * *
 #        K   * * * *
 M = break_stationary()
+print(M)
 
 clr = init_clr()
 i,j = 0,0
