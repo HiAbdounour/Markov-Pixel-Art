@@ -31,7 +31,9 @@ while running:
     draw_pixel(window,(i,j),clr)
     pygame.time.delay(1000)
     i+=50
-    j+=50
+    if i==500:
+        i=0
+        j+=50
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
