@@ -20,6 +20,8 @@ def change_color(clr,M):
     new_clr = np.dot(M,np.array(list(clr)))
     return new_clr
 
+
+# stochastic or not ?
 # mathrix :  C M Y K
 #        C   * * * *
 #        M   * * * *
