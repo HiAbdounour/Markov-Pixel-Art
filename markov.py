@@ -4,10 +4,10 @@ pygame.init()
 
 def convert_to_RGB(clr):
     c,m,y,k = clr
-    c//=100
-    m//=100
-    y//=100
-    k//=100
+    c/=100
+    m/=100
+    y/=100
+    k/=100
     return (255*(1-c)*(1-k),255*(1-m)*(1-k),255*(1-y)*(1-k))
 
 
