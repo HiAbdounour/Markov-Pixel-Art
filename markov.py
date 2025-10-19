@@ -44,7 +44,6 @@ def change_color(clr,M):
 def break_stationary():
     N = np.array([[np.random.uniform(0.0,0.33) for j in range(4)] for i in range(3)])
     stocha = np.array([1-np.sum(N[:,j]) for j in range(4)])
-    print(np.shape(stocha))
     # redimension for concatenation 
     stocha = np.reshape(stocha,(1,4))
     return np.concatenate((N,stocha))
@@ -55,7 +54,6 @@ def break_stationary():
 #        Y   * * * *
 #        K   * * * *
 M = break_stationary()
-print(M)
 
 clr = init_clr()
 i,j = 0,0
@@ -72,7 +70,6 @@ while running:
         clr = change_color(clr,M)
         if i%250==0:
             M = break_stationary()
-            print(M,'\n')
         if i==500:
             i=0
             j+=50
