@@ -2,6 +2,20 @@ import numpy as np
 import pygame
 pygame.init()
 
+def init_clr():
+    c,m,y,k = -1,-1,-1,-1
+    while not(0<=c<=100 and 0<=m<=100 and 0<=y<=100 and 0<=k<=100):
+        c,m,y,k = input("Enter four values (between 0 and 100) separated by a comma : respectively cyan, magenta, yellow and black :").split(",")
+        try:
+            c,m,y,k = int(c),int(m),int(y),int(k)
+        except ValueError:
+            print("Please enter an integer")
+            init_clr()
+        except Exception:
+            print("Something goes wrong... Please retry\n")
+            init_clr()
+    return (c,m,y,k)
+
 def convert_to_RGB(clr):
     c,m,y,k = clr
     c/=100
@@ -35,11 +49,11 @@ def break_stationary():
 #        K   * * * *
 M = break_stationary()
 
+clr = init_clr()
+i,j = 0,0
+
 window = pygame.display.set_mode((500,500))
 pygame.display.set_caption("Markov Pixel Art")
-
-clr = (50,14,28,0)
-i,j = 0,0
 
 running = True
 while running:
