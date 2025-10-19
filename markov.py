@@ -4,21 +4,22 @@ pygame.init()
 
 def init_clr():
     c,m,y,k = -1,-1,-1,-1
-    while not(0<=c<=100 and 0<=m<=100 and 0<=y<=100 and 0<=k<=100):
+    try:
+        c,m,y,k = input("Enter four values (between 0 and 100) separated by a comma : respectively cyan, magenta, yellow and black :").split(",")
+    except ValueError:
+        print("Please enter FOUR values")
+        init_clr()
+    else:
         try:
-            c,m,y,k = input("Enter four values (between 0 and 100) separated by a comma : respectively cyan, magenta, yellow and black :").split(",")
+            c,m,y,k = int(c),int(m),int(y),int(k)
+            if not(0<=c<=100 and 0<=m<=100 and 0<=y<=100 and 0<=k<=100):
+                raise ValueError
         except ValueError:
-            print("Please enter FOUR values")
+            print("Please enter an integer between 0 and 100")
             init_clr()
-        else:
-            try:
-                c,m,y,k = int(c),int(m),int(y),int(k)
-            except ValueError:
-                print("Please enter an integer")
-                init_clr()
-            except Exception:
-                print("Something goes wrong... Please retry\n")
-                init_clr()
+        except Exception:
+            print("Something goes wrong... Please retry\n")
+            init_clr()
     return (c,m,y,k)
 
 def convert_to_RGB(clr):
