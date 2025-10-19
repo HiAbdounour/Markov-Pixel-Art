@@ -7,6 +7,10 @@ def draw_pixel(window,pos,clr):
     pygame.draw.rect(window,pygame.Color(clr),(pos[0],pos[1],50,50),0)
     pygame.display.flip()
 
+def change_color(clr,M):
+    new_clr = np.dot(M,np.array(list(clr)))
+    print(new_clr)
+
 # mathrix :  C M Y K
 #        C   * * * *
 #        M   * * * *
@@ -32,6 +36,7 @@ while running:
         draw_pixel(window,(i,j),clr)
         pygame.time.delay(1000)
         i+=50
+        change_color(clr,M)
         if i==500:
             i=0
             j+=50
