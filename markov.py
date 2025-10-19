@@ -19,16 +19,19 @@ M = np.array([
      [0.2,0.5,0.15,0.7]
 ])
 
-clr_0 = (50,14,28,0)
 
 window = pygame.display.set_mode((500,500))
 pygame.display.set_caption("Markov Pixel Art")
 
-draw_pixel(window,(0,0),clr_0)
+clr = (50,14,28,0)
+i,j = 0,0
 
 running = True
 while running:
-
+    draw_pixel(window,(i,j),clr)
+    pygame.time.delay(1000)
+    i+=50
+    j+=50
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
