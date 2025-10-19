@@ -32,9 +32,8 @@ def convert_to_RGB(clr):
 
 
 def draw_pixel(window,pos,clr):
-    print(clr)
     clr = convert_to_RGB(clr)
-    print(clr)
+    clr = [abs(clr[i]) for i in range(3)]
     pygame.draw.rect(window,pygame.Color(clr),(pos[0],pos[1],50,50),0)
     pygame.display.flip()
 
