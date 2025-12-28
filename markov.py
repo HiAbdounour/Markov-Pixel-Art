@@ -66,16 +66,17 @@ while running:
     if j!=500:
         draw_pixel(window,(i,j),clr)
         pygame.time.delay(1000)
-        i+=50
-        clr = change_color(clr,M)
-        if i==500:
-            i=0
-            j+=50
 
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
                     M = break_stationary()
+
+        i+=50
+        clr = change_color(clr,M)
+        if i==500:
+            i=0
+            j+=50
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
