@@ -2,7 +2,7 @@
 
 Create some amazing pieces of artwork (or non-sense works of art !) using the power of Markov chains !
 _________________________________________________
-💡*You're currently on the version **v0.1.0** of this project. To download previous versions, please go to the Release section.*
+💡*You're currently on the version **v0.2.0** of this project. To download previous versions, please go to the Release section.*
 _________________________________________________
 ## ❓What is it ?
 The Markov Pixel Art project is a programm that allows you to generate an image made of ``50x50`` pixels with random colors.\
@@ -26,7 +26,10 @@ At the end, you can take a screenshot of your fabulous artwork.
 
 *\*Basically, it changes the transition matrix M, so not only the next color is changed but its successors too, until SPACE key is pressed another time.*\
 
-*Some examples (screenshots) will be added soon.*
+**Examples of artwork made with the project :**\
+<img width="128" height="128" alt="Capture d&#39;écran 2025-12-28 142503" src="https://github.com/user-attachments/assets/9b7eb797-015d-480c-8a26-e209280cb8d9" />
+<img width="128" height="128" alt="Capture d&#39;écran 2025-12-28 141944" src="https://github.com/user-attachments/assets/6b8445de-0eec-4279-b3a1-dccdfc75b3a8" />
+<img width="128" height="128" alt="Capture d&#39;écran 2025-12-28 142832" src="https://github.com/user-attachments/assets/62196f87-dc8c-4600-8dc8-b2929632b531" />
 
 Let's together dive inside Markov's secrets !
 
