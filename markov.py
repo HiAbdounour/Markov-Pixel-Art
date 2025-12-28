@@ -16,7 +16,7 @@ def init_clr():
                 raise ValueError
             return (c,m,y,k)
         except ValueError:
-            print("Please enter an integer between 0 and 100")
+            print("Please enter 4 integers between 0 and 100")
             init_clr()
         except Exception:
             print("Something goes wrong... Please retry\n")
