@@ -11,7 +11,7 @@ You choice the color of the first pixel (the top left corner) and then the other
 ## 🖥️ Download the project
 
 This project runs only in Python. \
-You need **at least Python 3.12** and the python module  **pygame (version 2.6.1 at least)** to run this project. \
+You need **Python *(developped with v3.12)*** and the python module  **pygame *(developped with version 2.6.1)*** to run this project. \
 If these requirements are satisfied, type ```git clone https://github.com/HiAbdounour/Markov-Pixel-Art``` in the terminal (cmd) to download the project.
 
 You can also download the whole repository in the Release section *(but the project isn't actually big, a ``zip`` file just for one Python file...)*
