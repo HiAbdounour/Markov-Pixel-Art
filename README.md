@@ -32,8 +32,8 @@ At the end, you can take a screenshot of your fabulous artwork.
 <img width="128" height="128" alt="Capture d&#39;écran 2025-12-28 142503" src="https://github.com/user-attachments/assets/9b7eb797-015d-480c-8a26-e209280cb8d9" />
 <img width="128" height="128" alt="Capture d&#39;écran 2025-12-28 141944" src="https://github.com/user-attachments/assets/6b8445de-0eec-4279-b3a1-dccdfc75b3a8" />
 <img width="128" height="128" alt="Capture d&#39;écran 2025-12-28 142832" src="https://github.com/user-attachments/assets/62196f87-dc8c-4600-8dc8-b2929632b531" />
-<img width="128" height="128" alt="nothing" src="https://github.com/HiAbdounour/Markov-Pixel-Art/captures/545172811524512.png" />
-<img width="128" height="128" alt="nothing" src="https://github.com/HiAbdounour/Markov-Pixel-Art/captures/5976410258549268132329627.png" />
+<img width="128" height="128" alt="nothing" src="https://github.com/HiAbdounour/Markov-Pixel-Art/blob/main/captures/545172811524512.png" />
+<img width="128" height="128" alt="nothing" src="https://github.com/HiAbdounour/Markov-Pixel-Art/blob/main/captures/5976410258549268132329627.png" />
 
 Let's together dive inside Markov's secrets !
 
