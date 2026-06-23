@@ -1,58 +1,50 @@
 import numpy as np
+from random import random as rdm,uniform as unif,randint as rdt
 import pygame
 pygame.init()
 
 def init_clr():
-    c,m,y,k = -1,-1,-1,-1
+    r,g,b = -1,-1,-1
     try:
-        c,m,y,k = input("Enter four values (between 0 and 100) separated by a comma : respectively cyan, magenta, yellow and black :").split(",")
+        r = int(input("Choose your initial value of red (between 0 and 255) : "))
+        g = int(input("Choose your initial value of green (between 0 and 255) : "))
+        b = int(input("Choose your initial value of blue (between 0 and 255) : "))
+        RANGE = list(range(0,256))
+        if r not in RANGE or g not in RANGE or b not in RANGE:
+            raise ValueError
     except ValueError:
-        print("Please enter FOUR values")
+        print("Please enter values between 0 and 255\n")
         init_clr()
-    else:
-        try:
-            c,m,y,k = int(c),int(m),int(y),int(k)
-            if not(0<=c<=100 and 0<=m<=100 and 0<=y<=100 and 0<=k<=100):
-                raise ValueError
-            return (c,m,y,k)
-        except ValueError:
-            print("Please enter 4 integers between 0 and 100")
-            init_clr()
-        except Exception:
-            print("Something goes wrong... Please retry\n")
-            init_clr()
-
-def convert_to_RGB(clr):
-    c,m,y,k = clr
-    c/=100
-    m/=100
-    y/=100
-    k/=100
-    return (255*(1-c)*(1-k),255*(1-m)*(1-k),255*(1-y)*(1-k))
-
+    except Exception:
+        print("Something goes wrong... Please retry\n")
+        init_clr()
+    return np.array([r,g,b])
 
 def draw_pixel(window,pos,clr):
-    clr = convert_to_RGB(clr)
-    clr = [abs(clr[i]) for i in range(3)]
-    pygame.draw.rect(window,pygame.Color(clr),(pos[0],pos[1],50,50),0)
+    clrx = clr.tolist()
+    clrx = [min(abs(elem),255) for elem in clrx]
+    pygame.draw.rect(window,pygame.Color(clrx),(pos[0],pos[1],50,50),0)
     pygame.display.flip()
 
 def change_color(clr,M):
-    new_clr = np.dot(M,np.array(list(clr)))
+    new_clr = np.dot(M,clr)
     return new_clr
 
 def break_stationary():
-    N = np.array([[np.random.uniform(0.0,0.33) for j in range(4)] for i in range(3)])
-    stocha = np.array([1-np.sum(N[:,j]) for j in range(4)])
-    # redimension for concatenation 
-    stocha = np.reshape(stocha,(1,4))
-    return np.concatenate((N,stocha))
+    x = [rdm() for _ in range(3)]
+    y = [unif(0,x[i]) for i in range(3)]
+    z = [1-x[i]-y[i] for i in range(3)]
 
-# mathrix :  C M Y K
-#        C   * * * *
-#        M   * * * *
-#        Y   * * * *
-#        K   * * * *
+    Nx = [x,y,z]
+    Nsh = np.array(Nx.pop(rdt(0,2)),dtype=float)
+    Nsh = np.concatenate((Nsh,np.array(Nx.pop(rdt(0,1)),dtype=float)))
+    N = np.concatenate((Nsh,np.array(Nx.pop(),dtype=float)))
+    return N.reshape(3,3)
+
+# mathrix :  R G B
+#        R   * * *
+#        G   * * *
+#        B   * * *
 M = break_stationary()
 
 clr = init_clr()
